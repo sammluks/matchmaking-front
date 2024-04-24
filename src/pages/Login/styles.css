@@ -1,0 +1,33 @@
+.form-input {
+    width: 100%;
+    padding: .5rem .5rem ;
+    display: grid;
+}
+
+input {
+    margin: 0rem auto 1.5rem ;
+}
+
+.button {
+    display: grid;
+    margin: .5rem 1rem;
+}
+
+button {
+    margin: 0.3rem;
+}
+
+.link {
+    width: 100%;
+    display: grid;
+}
+
+.login-container {
+    background-color: var(--cinza-escuro);
+}
+
+.card-login {
+    color: var(--cinza-escuro);
+    background-color: var(--verde);
+
+}

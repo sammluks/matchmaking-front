@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   --verde: #81FE88;
   --fonte: 'Prompt', sans-serif;

@@ -4,6 +4,7 @@ import UserImg from './assets/user.svg'
 import Info from './assets/info.svg'
 import Exit from './assets/exit.png'
 import './styles.css'
+import { Link } from 'react-router-dom'
 
 export default function Sidebar() {
     return (
@@ -12,7 +13,8 @@ export default function Sidebar() {
             <nav>
                 <ul className='lista-sidebar'>
                     <li>
-                        <a href='#' className='item__link-publicacao'>Publicar</a>
+                        {/* <a href='#' className='item__link-publicacao'>Publicar</a> */}
+                        <Link to="/postar">Publicar</Link>
                     </li>
                     <li>
                         <a href='#' className='item__link item__link--ativo'>
