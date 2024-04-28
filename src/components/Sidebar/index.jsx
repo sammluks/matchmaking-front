@@ -18,25 +18,25 @@ export default function Sidebar() {
                     </li>
                     <li>
                         <a href='#' className='item__link item__link--ativo'>
-                            <img src={Feed} alt='Imagem das publicações'/>
+                            <img className="sidebar-img" src={Feed} alt='Imagem das publicações'/>
                             <span>Feed</span>
                         </a>
                     </li>
                     <li>
                         <a href='#' className='item__link'>
-                            <img src={UserImg} alt='Imagem do usuário'/>
+                            <img className="sidebar-img" src={UserImg} alt='Imagem do usuário'/>
                             <span>Usuário</span>
                         </a>
                     </li>
                     <li>
                         <a href='#' className='item__link'>
-                            <img src={Info} alt='Imagem do sobre nós'/>
+                            <img className="sidebar-img" src={Info} alt='Imagem do sobre nós'/>
                             <span>Sobre nós</span>
                         </a>
                     </li>
                     <li>
                         <a href='#' className='item__link'>
-                            <img src={Exit} alt='Imagem para sair'/>
+                            <img className="sidebar-img" src={Exit} alt='Imagem para sair'/>
                             <span>Sair</span>
                         </a>
                     </li>

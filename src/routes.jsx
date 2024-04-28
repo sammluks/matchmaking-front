@@ -16,7 +16,7 @@ export default function AppRoutes() {
                 <Route path="/postar" element={<Postar/>}/>
                 <Route path="/register" element={<Cadastro/>}/>
                 <Route path="/welcome" element={<Welcome/>}/>
-                <Route path="/posts" element={<Posts/>}/>
+                <Route path="/posts/:id" element={<Posts/>}/>
                 <Route path="/header" element={<Header/>}/>
             </Routes>
         </BrowserRouter>

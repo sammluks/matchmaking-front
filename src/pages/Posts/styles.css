@@ -1,0 +1,22 @@
+.tipografia-post-titulo {
+    text-align: center;
+}
+
+.imagem_post {
+    width: 100%;
+    height: 500px;
+    background-color: var(--cinza-claro);
+    border-radius: 15px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imagem-card {
+    margin: 3em;
+}
+
+.body-post {
+    /* white-space: pre-line; */
+}
