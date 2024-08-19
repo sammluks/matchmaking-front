@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 import './styles.css'
 
-export default function Card({ id, imagem, titulo, autor, resumo }) {
+export default function Card({ id, imagem, titulo, autor, resumo, onRemover, index }) {
     let link = `/posts/${id}`;
     let editLink = `/posts/${id}/edit`;
     let removeLink = `/posts/${id}/remove`;
@@ -32,7 +32,7 @@ export default function Card({ id, imagem, titulo, autor, resumo }) {
                         <Link to={editLink}><EditIcon /></Link>
                     </div>
                     <div className='excluir'>
-                        <Link to={removeLink}><RemoveIcon /></Link>
+                        <button onClick={() => (onRemover(id))}><RemoveIcon /></button>
                     </div>
                 </div>
             </div>

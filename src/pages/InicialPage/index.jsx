@@ -17,6 +17,19 @@ export default function InicialPage() {
         }
     }
 
+    const removerItem = (postId) => {
+        setPosts(posts.filter(post => post.id !== postId));
+        removerPost(postId);
+    };
+
+    async function removerPost(id) {
+        try{
+            await api.delete(`/posts/${id}`);
+        } catch(error) {
+            alert("Não foi possível deletar o post, tente novamente")
+        }
+    }
+
     useEffect(() => {
         getPosts()
     }, [])
@@ -26,8 +39,8 @@ export default function InicialPage() {
             <Sidebar />
             <div>
                 <BarraDePesquisa />
-                <br/>
-                <br/>
+                <br />
+                <br />
                 <ul className='list-cards'>
                     {posts ? posts.map((post) => (
                         <li key={post.id}>
@@ -37,8 +50,9 @@ export default function InicialPage() {
                                 titulo={post.title}
                                 autor={post.author}
                                 resumo={post.summary}
+                                onRemover={removerItem}
                             />
-                            <br/>
+                            <br />
                         </li>
                     )) : null}
                 </ul>

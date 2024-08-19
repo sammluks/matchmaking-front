@@ -53,7 +53,7 @@ export default function EditarPost() {
             formData.append('title', title);
             formData.append('body', body);
 
-            const response = await api.put(`/posts/${id}`, formData)
+            const response = await api.put(`/posts/${id}`, formData);
 
             
         } catch (error) {
