@@ -1,14 +1,12 @@
-import { Card, CardHeader, FormControl, FormLabel, Input, Button, Link, CardContent, Typography, CardMedia, Grid, Paper, TextField, InputLabel, TextareaAutosize } from "@mui/material";
-import "./styles.css"
-import Logo from "/src/assets/matchmaking-logo-reduzido.png"
-import * as Yup from 'yup'
-import api from "../../services/api";
-import { useNavigate } from 'react-router-dom';
-import { Text, Textarea } from "@chakra-ui/react";
-import FileInput from "../../components/FileInput";
+import { Textarea } from "@chakra-ui/react";
+import { Button, Card, CardContent, CardMedia, Grid, InputLabel, TextField, Typography } from "@mui/material";
 import { useState } from "react";
+import { useNavigate } from 'react-router-dom';
+import FileInput from "../../components/FileInput";
 import Sidebar from "../../components/Sidebar";
-import BarraDePesquisa from "../../components/BarraDePesquisa";
+import api from "../../services/api";
+import "./styles.css";
+import Logo from "/src/assets/matchmaking-logo-reduzido.png";
 
 
 const initialValues = {
@@ -44,8 +42,11 @@ export default function Postar() {
             formData.append('title', title);
             formData.append('body', description);
             formData.append('category', category);
+            formData.append('author', localStorage.getItem('username'));
 
             const response = await api.post('/posts/auth', formData)
+
+            navigate('/')
 
         } catch (error) {
             alert("Não foi possível postar. Favor tentar novamente")
@@ -69,8 +70,8 @@ export default function Postar() {
                         justifyContent="center"
                     >
                         <CardMedia
-                            className="img"
-                            sx={{ width: "500px", height: "100px", borderRadius: '200px 200px 200px 200px' }}
+                            className="card__imagem_postar"
+                            // sx={{ width: "100%", height: "200px", borderRadius: '200px 200px 200px 200px' }}
                             image={Logo}
                         />
                     </Grid>
@@ -94,7 +95,7 @@ export default function Postar() {
                                 sx={{ margin: '3em 0em 1em 0em' }}
                                 align='center'>Texto</InputLabel>
                             <Textarea
-                                sx={{ height: '500px' }}
+                                sx={{ height: '400px' }}
                                 name="description"
                                 onChange={e => setDescription(e.target.value)}
 
