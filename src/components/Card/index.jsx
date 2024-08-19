@@ -1,9 +1,14 @@
-import Capa from './assets/matchmaking.jfif'
-import IconeUsuario from './assets/16492.png'
+import { EditIcon } from '../../assets/Icons/editIcon'
+import { RemoveIcon } from '../../assets/Icons/removeIcon'
+import { Link } from "react-router-dom";
 
 import './styles.css'
 
-export default function Card({id, imagem, titulo, autor, resumo}) {
+export default function Card({ id, imagem, titulo, autor, resumo }) {
+    let link = `/posts/${id}`;
+    let editLink = `/posts/${id}/edit`;
+    let removeLink = `/posts/${id}/remove`;
+
     return (
         <article className="card">
             <div className="card__imagem">
@@ -11,18 +16,24 @@ export default function Card({id, imagem, titulo, autor, resumo}) {
             </div>
             <div className='card__conteudo'>
                 <div className='conteudo__texto'>
-                    <h3>{titulo}</h3>
+                    <Link to={link}><h3>{titulo}</h3></Link>
                     <p>{resumo}</p>
                 </div>
 
                 <div className='conteudo__rodape'>
-                    <ul>
-                        <li>
-                            <div className='rodape__usuario'>
+                    <div className='autor'>
+                        <ul>
+                            <li>
                                 <p>Autor: {autor}</p>
-                            </div>
-                        </li>
-                    </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div className='editar'>
+                        <Link to={editLink}><EditIcon /></Link>
+                    </div>
+                    <div className='excluir'>
+                        <Link to={removeLink}><RemoveIcon /></Link>
+                    </div>
                 </div>
             </div>
         </article>
