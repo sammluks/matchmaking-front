@@ -8,6 +8,7 @@ import InitialPage from "./pages/InicialPage";
 import Postar from "./pages/Postar";
 import SobreNos from "./pages/SobreNos";
 import EditarPost from "./pages/EditarPost";
+import Logout from "./components/Logout";
 
 export default function AppRoutes() {
     return (
@@ -22,6 +23,7 @@ export default function AppRoutes() {
                 <Route path="/posts/:id" element={<Posts/>}/>
                 <Route path="/posts/:id/edit" element={<EditarPost/>}/>
                 <Route path="/sobreNos" element={<SobreNos/>}/>
+                <Route path="/logout" element={<Logout/>}/>
             </Routes>
         </BrowserRouter>
     )

@@ -55,7 +55,7 @@ export default function Sidebar() {
                     </li>
                     <li>
                         {isLogged ?
-                            <a href='#' className='item__link'>
+                            <a href='/logout' className='item__link'>
                                 <img className="sidebar-img" src={Exit} alt='Imagem para sair' />
                                 <span>Sair</span>
                             </a>
